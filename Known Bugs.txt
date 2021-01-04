@@ -1,0 +1,8 @@
+Win detection will sometimes not work when you beat the computer.
+After winning a blackJack the script continues.
+Aces arent worth 1 only 10
+EXTRA INFO:
+I havent added a whole deck to the script only 1-10 and 4 face cards that are each worth 10
+Odds arent 1 to 1 scale of black jack
+
+Im working on fixing most of these bugs
