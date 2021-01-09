@@ -1,8 +1,13 @@
 import random
 import time
+############################
+#          Betting         #
+############################
+AmountOfChips = float(input("Enter how many chips you want to bet "))
 #############################
 #         USER CODE         #
 #############################
+Bust = False
 FCard = 0
 Acards = 0
 FirstCards = 0
@@ -47,12 +52,16 @@ while Hit != False:
         
         Acards = Acards + Card
         if(Acards > 21):
+            Bust = True
             print("Bust")
             Hit = False
         else:
+            Bust = False
             print("New Total is", Acards)
     else:
         Hit = False
+if(Acards == 21):
+    print("BLACKJACK")
 #########################
 #      ComputerCode     #    
 #########################
@@ -67,11 +76,25 @@ while(FComputerCards < 17):
     time.sleep(1.5)
 if(Acards == FComputerCards):
     print("PUSH")
+    Pushed = True
+else:
+    Pushed = False
+#######################
+#     Win detection   #
+#######################
 if(Acards <= 21):
     if(FComputerCards != 21):
-        if(Acards > FComputerCards):
-            print("WIN")
+        if(Bust == False):
+            if(FComputerCards <= 21):
+                if(Acards > FComputerCards):
+                    print("WIN")
+                    AmountOfChips *= 2
+                    print("You won ", AmountOfChips)
+                else:
+                    print("YOU LOST")
+    else:
+        print("You Lost :(")        
 else:
     print("You Lost :(")
-
 input("Input added so py file doesnt close. close and open blackjack.py file to play again.")
+# 100 lines
