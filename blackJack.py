@@ -10,9 +10,8 @@ for line in file:
 print("You Have: ", coins, "chips")
 AmountOfChips = float(input("Enter how many chips you want to bet "))
 NewAmountOfChips = int(coins) - int(AmountOfChips)
-filetowrite.truncate(0)
-filetowrite.write(str(NewAmountOfChips))
 
+print(NewAmountOfChips)
 #############################
 #         USER CODE         #
 #############################
@@ -99,11 +98,24 @@ if(Acards <= 21):
                     print("WIN")
                     AmountOfChips *= 2
                     print("You won ", AmountOfChips)
+                    filetowrite.truncate(0)
+                    filetowrite.write(str(NewAmountOfChips))
                 else:
                     print("YOU LOST")
+                    filetowrite.truncate(0)
+                    filetowrite.write(str(NewAmountOfChips))
+            else:
+                print("You WIN")
+                filetowrite.truncate(0)
+                AmountOfChips *= 2
+                filetowrite.write(str(NewAmountOfChips))
+
     else:
-        print("You Lost :(")        
+        print("You Lost :(")
+        filetowrite.truncate(0)
+        filetowrite.write(str(NewAmountOfChips))       
 else:
     print("You Lost :(")
+    filetowrite.truncate(0)
+    filetowrite.write(str(NewAmountOfChips))  
 input("Input added so py file doesnt close. close and open blackjack.py file to play again.")
-# 100 lines
