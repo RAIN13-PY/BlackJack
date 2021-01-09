@@ -12,7 +12,7 @@ AmountOfChips = float(input("Enter how many chips you want to bet "))
 NewAmountOfChips = int(coins) - int(AmountOfChips)
 filetowrite.truncate(0)
 filetowrite.write(str(NewAmountOfChips))
-print(NewAmountOfChips)
+
 #############################
 #         USER CODE         #
 #############################
